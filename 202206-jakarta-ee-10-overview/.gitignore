@@ -1,0 +1,8 @@
+wildfly-preview-*
+target/
+.apt_generated/
+.vscode/
+
+# generated slides
+*.pptx
+*.pdf
