@@ -119,14 +119,14 @@ PrimeFaces, PrimeNG, PrimeReact, PrimeVueで共通で利用されるアイコン
             MESSAGE_ID: 'your.own.converter.MESSAGE',
             regex: /^\d{4}-\d{2}-\d{2}$/,
 
-            convert: function(element, value) => {
+            convert: function(element, value) {
                 const vc = PrimeFaces.validation.ValidationContext;
 
                 if (!this.regex.test(value)) {
                     throw vc.getMessage(this.MESSAGE_ID, vc.getLabel(element));
                 }
                 return new Date(value);
-            }
+            },
         };
         ```
 
@@ -142,14 +142,17 @@ PrimeFaces, PrimeNG, PrimeReact, PrimeVueで共通で利用されるアイコン
             MESSAGE_ID: 'your.own.validator.MESSAGE',
             regex: /^\d{3}-\d{4}$/,
 
-            validate: function(element, value) => {
+            validate: function(element, value) {
                 const vc = PrimeFaces.validation.ValidationContext;
                 if (!this.regex.text(value)) {
                     throw vc.getMessage(this.MESSAGE_ID, vc.getLabel(element)):
                 }
-            }
+            },
         };
         ```
+<!-- validateでは、必ず第2引数の`value`を使用して検証する必要がある。
+第1引数のelementは値を入力した要素なのでここからも値を取り出せるが、Converterを通す前の値になってしまう。
+実際にPrimeFacesが提供するValidatorの実装に、変換前の値で検証してしまっているバグがあった。このバグはすでに修正されている-->
 
 ---
 
@@ -167,6 +170,8 @@ UIコンポーネントは、主に以下の要素で構成されている。
 リクエストのデコードと、レスポンスのエンコード(HTML/JSの生成)を担う
 - (JavaScript) PrimeFaces.widget.FooBar (例: `PrimeFaces.widget.DatePicker`)
 コンポーネントのクライアントサイドの処理
+
+<!-- JS: PrimeFacesのクライアントサイドはjQueryを利用して実装されていて、jQueryを使用したコンポーネントの制御が、このPrimeFaces.widget.XXXに実装されている。-->
 
 ---
 
