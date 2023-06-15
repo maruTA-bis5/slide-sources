@@ -312,7 +312,7 @@ PrimeFacesはOSS
 ---
 
 ### 問題の報告手順
-1. 素のPrimeFaceaで不具合が発生することを確認できるコードを用意する
+1. 素のPrimeFacesで不具合が発生することを確認できるコードを用意する
     - PrimeFaces Showcaseで問題が発生するならその内容を示せば良い
         - 最新のmasterからShowcaseをビルドし、再現するか確認できれば尚良し
             - 公開されているShowcaseは常に最新ではなさそう
