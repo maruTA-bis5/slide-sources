@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+    xmlns:jsf="http://xmlns.jcp.org/jsf"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>PrimeFaces Test</title>
+        <h:outputStylesheet library="webjars" name="primeflex/3.3.1/primeflex.min.css" />
+    </h:head>
+    <h:body>
+
+        <h:form id="frmTest">
+            <div class="fluid">
+                <p:outputLabel for="username">ユーザー名</p:outputLabel>
+                <p:inputText id="username" value="#{appView.form.username}" required="true" />
+            </div>
+            <div class="fluid">
+                <p:outputLabel for="password">パスワード</p:outputLabel>
+                <p:password id="password" value="#{appView.form.password}" required="true" />
+            </div>
+            <div class="fluid">
+                <p:outputLabel for="email">メールアドレス</p:outputLabel>
+                <p:inputText id="email" value="#{appView.form.email}" required="true" />
+            </div>
+            <div class="fluid">
+                <p:commandButton value="確認" actionListener="#{appView.showResult}"
+                    process="@form" update="@form:messages" />
+                <p:commandButton ajax="false" value="確認(非Ajax)" actionListener="#{appView.showResult}"
+                    process="@form" update="@form:messages" />
+            </div>
+            <p:messages id="messages" />
+
+        </h:form>
+
+    </h:body>
+</html>
