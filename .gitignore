@@ -1,0 +1,6 @@
+# generated slides
+*.pptx
+*.pdf
+
+# recordings
+*.mp4
