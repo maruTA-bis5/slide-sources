@@ -1,7 +1,7 @@
 ---
 marp: true
 paginate: true
-title: Inside PrimeFaces
+title: プログラミング(再)入門
 author: Takayuki Maruyama ([@maruTA-bis5](https://github.com/maruTA-bis5))
 footer: This work by Takayuki Maruyama is licensed under [CC BY-SA 4.0 ![Creative Commons height:16px](https://mirrors.creativecommons.org/presskit/icons/cc.svg)![BY height:16px](https://mirrors.creativecommons.org/presskit/icons/by.svg)![SA height:16px](https://mirrors.creativecommons.org/presskit/icons/sa.svg)](https://creativecommons.org/licenses/by-sa/4.0/).
 ---
